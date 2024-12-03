@@ -1592,7 +1592,8 @@
 									<div class="right">
 										<div class="fields">
 											<form action="https://formspree.io/f/mldeayjv" method="POST"
-												class="contact_form" id="contact_form">
+												class="contact_form" id="contact_form"
+												onsubmit="redirectAfterSubmission()">
 												<div class="returnmessage"
 													data-success="Your message has been received, We will contact you soon.">
 												</div>
@@ -1613,8 +1614,8 @@
 														</li>
 														<input type="hidden" id="cc_email" name="_cc"
 															value="sabeermd996@gmail.com" autocomplete="off">
-														<input type="hidden" name="_next"
-															value="https://sabeermahmmad.github.io/my-portfolio.github.io/thanks.html">
+														<!-- <input type="hidden" name="_next"
+															value=""> -->
 													</ul>
 												</div>
 												<div class="last">
@@ -1695,6 +1696,13 @@
 	<script src="js/plugins.js"></script>
 	<script src="js/init.js"></script>
 	<!-- /SCRIPTS -->
+	<script>
+		function redirectAfterSubmission() {
+			setTimeout(() => {
+				window.location.href = "thanks.html";
+			}, 500); // Add delay to allow form submission
+		}
+	</script>
 
 </body>
 
