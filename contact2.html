@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.th-btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="mail.php" method="POST" class="contact-form ajax-contact">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email Address"
+                        required>
+                </div>
+                <div class="form-group col-md-6">
+                    <select name="subject" id="subject" class="form-select" required>
+                        <option value="" disabled selected>Select Subject</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Brand Marketing">Brand Marketing</option>
+                        <option value="UI/UX Designing">UI/UX Designing</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="tel" class="form-control" name="number" id="number" placeholder="Phone Number"
+                        required>
+                </div>
+                <div class="form-group col-12">
+                    <textarea name="message" id="message" cols="30" rows="3" class="form-control"
+                        placeholder="Your Message" required></textarea>
+                </div>
+                <div class="form-btn text-center col-12">
+                    <button type="submit" class="th-btn">Send Message</button>
+                </div>
+            </div>
+        </form>
+        <p class="form-messages"></p>
+    </div>
+</body>
+
+</html>

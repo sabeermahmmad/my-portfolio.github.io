@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <form id="contactForm" onsubmit="emailSend(); return false;">
+            <input type="text" id="name" placeholder="Name" name="name" required>
+            <input type="text" id="phone" placeholder="Phone" name="phone" required>
+            <input type="email" id="email" placeholder="Email" name="email" required>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function emailSend() {
+            // Gather input values
+            const name = document.getElementById("name").value;
+            const phone = document.getElementById("phone").value;
+            const email = document.getElementById("email").value;
+
+            // Send email
+            Email.send({
+                SecureToken: "0046edf0-3626-4414-bfe5-334052e13d48", // Avoid using this on the client side
+                To: 'sabeermd996@gmail.com',
+                From: "sabeermd996@gmail.com",
+                Subject: "New Contact Form Submission",
+                Body: `Name: ${name}<br>Phone: ${phone}<br>Email: ${email}`
+            }).then(message => {
+                alert(message);
+                document.getElementById("contactForm").reset(); // Reset the form
+            }).catch(error => {
+                alert("Error: " + error);
+            });
+        }
+    </script>
+</body>
+
+</html>
